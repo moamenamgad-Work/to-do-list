@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/output.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <h1
+          class="text-center my-9 font-bold capitalize text-6xl text-white text-shadow-lg"
+        >
+          <i class="fas fa-clipboard-check"></i>
+          to-do-list
+        </h1>
+      </div>
+    </header>
+    <main class="grid grid-cols-1 justify-between items-center">
+      <section id="inputs">
+        <div
+          class="md:container md:mx-auto flex flex-col justify-center items-center py-10"
+        >
+          <form class="md:mx-auto mx-4">
+            <label for="need" class="mb-4 text-lg font-medium text-green-300"
+              >What your task</label
+            >
+            <div class="flex mb-9 md:w-2xl">
+              <input
+                id="taskInput"
+                type="text"
+                oninput="valINP()"
+                placeholder="Add a new task..."
+                class="flex-1 pe-10 text-lg text-gray-900 border border-gray-300 rounded-l-lg bg-gray-50 focus:ring-green-500 focus:border-green-500"
+              />
+              <button
+                id="addTaskBtn"
+                type="button"
+                onclick="addtask()"
+                class="bg-green-600 hover:bg-green-500 active:scale-95 transition-all duration-200 text-white px-5 py-2 rounded-r-lg"
+              >
+                Add
+              </button>
+              <button
+                id="updateTaskBtn"
+                type="button"
+                onclick="updateTask()"
+                class="hidden bg-amber-500 hover:bg-amber-400 cursor-pointer text-white px-5 md:px-9 py-2 rounded-r-lg"
+              >
+                Update
+              </button>
+            </div>
+            <label
+              for="search-need"
+              class="mb-2 text-sm font-medium text-gray-900 sr-only"
+              >Search</label
+            >
+            <input
+              type="search"
+              id="search-need"
+              oninput="searchTask()"
+              class="block mx-auto md:w-lg text-lg text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-green-500 focus:border-green-500"
+              placeholder="Search"
+              required
+            />
+          </form>
+        </div>
+      </section>
+      <section id="content" class="mx-4">
+        <div
+          class="container bg-white/90 backdrop-blur p-8 rounded-2xl shadow-xl mx-auto md:max-w-2xl"
+        >
+          <h2
+            class="text-3xl font-bold mb-6 text-center text-green-700 flex items-center justify-center gap-2"
+          >
+            <i class="fas fa-list-check text-green-600"></i>
+            Your Tasks
+          </h2>
+          <ul id="taskList" class="space-y-4"></ul>
+        </div>
+      </section>
+    </main>
+
+    <div id="toastContainer" class="fixed top-5 right-5 space-y-3 z-50"></div>
+    <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
